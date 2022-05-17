@@ -1,0 +1,237 @@
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active:hover {
+  opacity: 0.7;
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: hsl(233deg, 26%, 24%);
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: hsl(233deg, 26%, 24%);
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+
+/*
+ * Squeeze
+ */
+.hamburger--squeeze .hamburger-inner {
+  transition-duration: 0.075s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--squeeze .hamburger-inner::before {
+  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+}
+.hamburger--squeeze .hamburger-inner::after {
+  transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--squeeze.is-active .hamburger-inner {
+  transform: rotate(45deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--squeeze.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+}
+.hamburger--squeeze.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+:root {
+  --h1: clamp(1.50rem, calc(1.21rem + 1.43vw), 2.50rem);
+  --blue: hsl(233, 26%, 24%);
+  --gradient: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+  --grayish-blue: hsl(233, 8%, 62%);
+  --light-grayish-blue: hsl(220, 16%, 96%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background: var(--white);
+  font-family: "Public Sans", sans-serif;
+}
+
+.skip {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  color: var(--blue);
+  background: var(--white);
+  font-weight: 700;
+  font-size: 1rem;
+  outline: 3px dashed var(--blue);
+}
+.skip:focus {
+  top: 4rem;
+}
+
+body.nav__open {
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+}
+.header__container {
+  width: min(100% - 2rem, 75rem);
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: auto;
+}
+.header .logo {
+  background-image: url("../assets/logo.svg");
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 139px;
+}
+.header .nav {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 0.5s ease-in-out;
+  background: hsla(233deg, 26%, 24%, 0.534);
+  border-radius: 5px;
+}
+.header .nav.open {
+  transform: scale(1, 1);
+}
+.header .nav__list {
+  margin: 1rem 0 0 1rem;
+  width: calc(100% - 2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0;
+  background-color: var(--very-light-gray);
+  list-style-type: none;
+  border-radius: 5px;
+}
+.header .nav__item:not(:nth-child(5)) {
+  margin-bottom: 1rem;
+}
+.header .nav .btn {
+  display: none;
+}
+.header .nav__link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--blue);
+}
+
+.heading {
+  font-size: var(--h1);
+}
+
+.footer__list {
+  column-count: 2;
+}
+
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+
+  .header .nav {
+    all: unset;
+  }
+  .header .nav__list {
+    display: flex;
+    align-items: center;
+  }
+  .header .nav__item {
+    margin-bottom: 0;
+    margin-right: 1.5rem;
+  }
+  .header .nav__link {
+    font-size: 1.2rem;
+  }
+}
+@media (pointer: fine) {
+  .nav__link,
+.footer__link,
+.social__icon {
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+}
