@@ -46,30 +46,28 @@
             <li class="nav__item">
               <a href="#" class="nav__link">Careers</a>
             </li>
-            <li class="nav__item btn">
-              <a href="#" class="nav__link">Request Invite</a>
-            </li>
           </ul>
         </div>
       </nav>
+      <a href="#" class="btn">Request Invite</a>
     </div>
   </header>
   <main class="main" id="main">
-    <section class="banner">
-        <div class="imgs">
+    <section aria-labelledby="banner__title" class="banner">
+        <div class="img">
           <img src="./assets/image-mockups.png" alt="" class="banner__img">
         </div>
         <div class="banner__content">
-          <h1 class="heading banner__heading">Next generation digital banking</h1>
+          <h1 id="banner__title" class="heading banner__heading">Next generation digital banking</h1>
           <p class="paragraph heading_sub">Take your financial life online. Your Easybank account will be a one-stop-shop
             for spending, saving, budgeting, investing, and much more.</p>
           <a href="#" class="banner__link btn">Request Invite</a>
         </div>
     </section>
-    <section class="why__us">
+    <section aria-labelledby="why-us" class="why__us">
       <div class="why__us__content">
 
-        <h2 class="heading section__heading">Why choose Easybank?</h2>
+        <h2 id="why-us" class="heading section__heading">Why choose Easybank?</h2>
         <p class="paragraph">We leverage Open Banking to turn your bank account into your financial hub. Control
           your finances like never before.</p>
         <ul class="cards">
@@ -104,8 +102,8 @@
         </ul>
       </div>
     </section>
-    <section class="lastest__articles">
-      <h2 class="heading section__heading">Latest Articles</h2>
+    <section aria-labelledby="latest__articles" class="lastest__articles">
+      <h2 id="latest__articles" class="heading section__heading">Latest Articles</h2>
       <div class="articles">
         <article class="article">
           <img src="./assets/image-currency.jpg" alt="" class="article__img">
@@ -151,56 +149,58 @@
     </section>
   </main>
   <footer class="footer">
-    <div class="footer__logo"></div>
-    <div class="social">
-      <a href="#" class="social__link">
-        <i class="fab fa-facebook-square social__icon"></i>
-        <span class="hidden">Facebook</span>
-      </a>
-      <a href="#" class="social__link youtube">
-        <img src="./assets/icon-youtube.svg" alt="" class="social__icon">
-        <span class="hidden">youtube</span>
-      </a>
-      <a href="#" class="social__link twitter">
-        <i class="fab fa-twitter twitter social__icon"></i>
-        <span class="hidden">Twitter</span>
-      </a>
-      <a href="#" class="social__link">
-        <i class="fa-brands fa-pinterest social__icon"></i>
-        <span class="hidden">Pinterest</span>
-      </a>
-      <a href="#" class="social__link twitter">
-        <i class="fab fa-instagram instagram social__icon"></i>
-        <span class="hidden">instagram</span>
-      </a>
-    </div>
-    <nav class="footer__nav" aria-label="secondary navigation">
-      <ul class="footer__list">
-        <li class="footer__item">
-          <a href="#" class="footer__link">About Us</a>
-        </li>
-        <li class="footer__item">
-          <a href="#" class="footer__link">Contact</a>
-        </li>
-        <li class="footer__item">
-          <a href="#" class="footer__link">Blog</a>
-        </li>
-        <li class="footer__item">
-          <a href="#" class="footer__link">Careers</a>
-        </li>
-        <li class="footer__item">
-          <a href="#" class="footer__link">Support</a>
-        </li>
-        <li class="footer__item">
-          <a href="#" class="footer__link">Privacy Policy</a>
-        </li>
-      </ul>
-    </nav>
-    <a href="#" class="invite btn">Request Invite</a>
-    <p class="copyright">&#169; Easybank. All Rights Reserved</p>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Chris Bailey</a>.
+    <div class="footer__container">
+      <div class="footer__logo"></div>
+      <div class="social">
+        <a href="#" class="social__link">
+          <i class="fab fa-facebook-square social__icon"></i>
+          <span class="hidden">Facebook</span>
+        </a>
+        <a href="#" class="social__link youtube">
+          <img src="./assets/icon-youtube.svg" alt="" class="social__icon">
+          <span class="hidden">youtube</span>
+        </a>
+        <a href="#" class="social__link twitter">
+          <i class="fab fa-twitter twitter social__icon"></i>
+          <span class="hidden">Twitter</span>
+        </a>
+        <a href="#" class="social__link">
+          <i class="fa-brands fa-pinterest social__icon"></i>
+          <span class="hidden">Pinterest</span>
+        </a>
+        <a href="#" class="social__link twitter">
+          <i class="fab fa-instagram instagram social__icon"></i>
+          <span class="hidden">instagram</span>
+        </a>
+      </div>
+      <nav class="footer__nav" aria-label="secondary navigation">
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a href="#" class="footer__link">About Us</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Contact</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Blog</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Careers</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Support</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">Privacy Policy</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="#" class="invite btn">Request Invite</a>
+      <p class="copyright">&#169; Easybank. All Rights Reserved</p>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://twitter.com/bailey_coding" target="_blank" rel="">Chris Bailey</a>.
+      </div>
     </div>
   </footer>
   <script src="./script.js"></script>
