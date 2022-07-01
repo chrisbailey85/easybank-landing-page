@@ -121,12 +121,16 @@
     animation: none !important;
   }
 }
+html {
+  overflow-x: hidden;
+}
+
 body {
+  position: relative;
   background: var(--white);
   font-family: "Public Sans", sans-serif;
   line-height: 1.5;
   overflow-x: hidden;
-  max-width: 100%;
 }
 
 body * {
@@ -150,7 +154,6 @@ body * {
 }
 
 body.nav__open {
-  position: relative;
   overflow: hidden;
 }
 
