@@ -106,6 +106,7 @@
   --grayish-blue: hsl(233, 8%, 62%);
   --light-grayish-blue: hsl(220, 16%, 96%);
   --very-light-gray: hsl(0, 0%, 98%);
+  --lime-green: hsl(136, 65%, 51%);
   --white: hsl(0, 0%, 100%);
   --container-width: min(100% - 2rem, 75rem);
 }
@@ -416,12 +417,13 @@ body::before {
 .footer__container .btn {
   padding: 0.7rem 2rem;
 }
-.footer__container .attribution {
+
+.attribution {
   text-align: center;
   color: var(--grayish-blue);
   font-size: 0.8rem;
 }
-.footer__container .attribution a {
+.attribution__link {
   color: var(--white);
 }
 
@@ -497,6 +499,22 @@ body::before {
   }
   .header .nav__link {
     font-size: 1.2rem;
+    color: var(--grayish-blue);
+    padding: 1rem 0;
+    display: block;
+    position: relative;
+  }
+  .header .nav__link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--lime-green);
+    transform: scale(0, 1);
+    transition: transform 0.4s ease-in-out;
+    transform-origin: right;
   }
 
   .header .btn {
@@ -596,9 +614,29 @@ body::before {
 @media (pointer: fine) {
   .nav__link,
 .footer__link,
-.social__icon {
-    position: relative;
+.social__icon,
+.btn,
+.article__link,
+.attribution__link {
     cursor: pointer;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.4s ease-in-out;
+  }
+
+  .nav__link:hover::before {
+    color: var(--blue);
+    transform: scale(1, 1);
+    transform-origin: left;
+  }
+
+  .btn:hover {
+    background-image: linear-gradient(to right, hsl(136deg, 77%, 77%), hsl(192deg, 57%, 72%));
+  }
+
+  .article__link:hover {
+    color: var(--lime-green);
+  }
+
+  .footer__link:hover, .social__icon:hover, .attribution__link:hover {
+    color: var(--lime-green);
   }
 }
