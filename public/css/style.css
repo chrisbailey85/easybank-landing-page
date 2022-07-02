@@ -622,8 +622,10 @@ body::before {
     transition: color 0.4s ease-in-out;
   }
 
-  .nav__link:hover::before {
+  .nav__link:hover {
     color: var(--blue);
+  }
+  .nav__link:hover::before {
     transform: scale(1, 1);
     transform-origin: left;
   }
@@ -638,5 +640,13 @@ body::before {
 
   .footer__link:hover, .social__icon:hover, .attribution__link:hover {
     color: var(--lime-green);
+  }
+
+  .youtube__link {
+    transition: fill 0.4s ease-in-out;
+  }
+
+  .youtube__link:hover {
+    fill: var(--lime-green);
   }
 }
